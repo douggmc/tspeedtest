@@ -1,0 +1,10 @@
+#!/bin/bash
+
+tr=$(speedtest -f json | jq .)
+dbytes=$(echo $tr | jq .download.bandwidth)
+ubytes=$(echo $tr | jq .upload.bandwidth)
+dmegs=$(expr $dbytes / 125000)
+umegs=$(expr $ubytes / 125000)
+echo "$dmegs / $umegs"
+
+
