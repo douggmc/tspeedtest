@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script calls the speedtest utility from Speedtest.com and uses 'jq' utility to parse response
+# and echos the response out to stdout.  It is for use by TextBar app (MacOS app)
+
 tr=$(speedtest -f json | jq .)
 dbytes=$(echo $tr | jq .download.bandwidth)
 ubytes=$(echo $tr | jq .upload.bandwidth)
