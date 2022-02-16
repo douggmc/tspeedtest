@@ -1,0 +1,2 @@
+https://www.speedtest.net/apps/cli
+https://stedolan.github.io/jq/
